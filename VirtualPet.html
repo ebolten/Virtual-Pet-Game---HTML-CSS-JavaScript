@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<!--This is a virtual pet game, it began as Python script-->
+
+<html>
+    <head>
+        <script>
+        function happinessFunction() {
+            var happiness = Math.floor(Math.random() * 10); //happiness variable
+
+            //getting what to print with fishHappiness id
+            var fishHappiness = document.getElementById("fishAttribute");
+
+            //changing text of id to innerHTML
+            fishHappiness.innerHTML = "Happiness: " + happiness + " / 10";
+
+            //to get the id of aliveFish
+            var aliveFish = document.getElementById("aliveFish");
+
+            if (happiness <= 1) { //if hunger is low
+                aliveFish.innerHTML = 'Your fish took it\'s own life! It died.';
+            }
+        
+            else if (happiness < 5) { //if hunger to a bit low
+                aliveFish.innerHTML = "You're fish is sort of unhappy."
+            }
+
+            else { //if happiness is good
+                aliveFish.innerHTML = 'Your fish is happy.';
+            }
+
+
+            return happiness;
+        
+        }
+
+        function hungerFunction() {
+            var hunger = Math.floor(Math.random() * 10); //hunger variable
+
+            //getting what to print with fishHealth id
+            var fishHealth = document.getElementById("fishAttribute");
+
+            //changing text of id to innerHTML
+            fishHealth.innerHTML = "Hunger: " + hunger + " / 10";
+
+            //to get the id of aliveFish
+            var aliveFish = document.getElementById("aliveFish");
+
+            if (hunger <= 1) { //if hunger is low
+                aliveFish.innerHTML = 'Your fish starved! It died.';
+            }
+        
+            else if (hunger < 5) { //if hunger to a bit low
+                aliveFish.innerHTML = "You're fish wants food."
+            }
+
+            else { //if hunger is good
+                aliveFish.innerHTML = 'Your fish is not hungry.';
+            }
+            return happiness;
+        }
+        
+        function healthFunction() { //function to get health of fish
+            
+            var health = Math.floor(Math.random() * 10); //health variable
+
+            //getting what to print with fishHealth id
+            var fishHealth = document.getElementById("fishAttribute");
+
+            //changing text of id to innerHTML
+            fishHealth.innerHTML = "Health: " + health + " / 10";
+            
+            //to get the id of aliveFish
+            var aliveFish = document.getElementById("aliveFish");
+
+            if (health <= 1) { //if health is low
+                aliveFish.innerHTML = 'Your fish got sick! It died.';
+            }
+        
+            else if (health < 5) { //if health to a bit low
+                aliveFish.innerHTML = "You're fish is a bit sick."
+            }
+
+            else { //if health is good
+                aliveFish.innerHTML = 'Your fish is in good health.';
+            }
+
+            return health; //returning the variable for health
+        }
+
+        </script>
+
+    </head>
+
+    <body style='font-family:Lucida Sans;text-align:center'>
+
+        <img src="Fish.PNG"
+        atr="My Fish!"
+        width='400'
+        height='300'
+        style:'text-align:center'>
+
+        <div style='display:block'>
+            <!--button for health of fish-->
+            <button onclick='healthFunction()'
+            style="border:2px solid;font-weight:bold;font-size:25px;height:60px;width:90px;font-family:'Lucida Sans'"
+            type="button">Health</button>
+
+            <!--button for hunger of fish-->
+            <button onclick='hungerFunction()'
+            style="border:2px solid;font-weight:bold;font-size:25px;height:60px;width:100px;font-family:'Lucida Sans'"
+            type="button">Hunger</button>
+
+            <!--button for happiness of fish-->
+            <button onclick='happinessFunction()'
+            style="border:2px solid;font-weight:bold;font-size:25px;height:60px;width:130px;font-family:'Lucida Sans'"
+            type="button">Happiness</button>
+
+            <h3 style = 'font-size:20px' id="fishAttribute"></h3>
+            <h3 id="aliveFish"><h3>
+        </div>
+    </body>
+<html>
